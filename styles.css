@@ -881,26 +881,40 @@ h1 em {
   }
 
   .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding-top: 4.5rem;
-    padding-bottom: 3rem;
+    align-content: space-between;
+    gap: clamp(0.65rem, 2.2svh, 1.25rem);
+    padding-top: clamp(1.25rem, 4svh, 2rem);
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero-tagline,
+  .hero-actions {
+    display: none;
+  }
+
+  .hero-content {
+    margin-top: clamp(1rem, 4svh, 2rem);
   }
 
   h1 {
-    font-size: clamp(3rem, 13vw, 5rem);
+    margin-bottom: 0;
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
   }
 
   .hero-visual {
-    min-height: 22rem;
+    min-height: 0;
     justify-items: stretch;
   }
 
   .shaft {
     width: min(70%, 18rem);
-    height: 17rem;
+    height: clamp(10rem, 32dvh, 15rem);
     justify-self: center;
-    margin-right: 0;
+    margin: 0 auto;
   }
 
   .service-ribbon {
