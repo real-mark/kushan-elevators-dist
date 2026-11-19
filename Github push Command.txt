@@ -1,7 +1,22 @@
-echo "# kushan-elevators-dist" >> README.md
+# 1. Tell Git to trust this folder (fixes the security ownership error)
+git config --global --add safe.directory 'C:/Users/MUKUNDANE MARK/OneDrive/Documents/Universal_site_builder_2/Websites/1 Pure Static (Hand-Coded) - html css js/kushan-elevators/dist'
+
+# 2. Make sure the local Git system is active here
 git init
-git add README.md
-git commit -m "first commit"
+
+# 3. Link this folder to your empty GitHub repository
+git remote add origin https://github.com
+
+# 4. Gather all the files inside your dist folder
+git add .
+
+# 5. Save those gathered files into a local snapshot (fixes the 'no match' error)
+git commit -m "Initial commit of dist files"
+
+# 6. Force your local branch name to be named 'main'
 git branch -M main
-git remote add origin https://github.com/real-mark/kushan-elevators-dist.git
+
+# 7. Upload everything safely to GitHub
 git push -u origin main
+
+
