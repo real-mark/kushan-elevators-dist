@@ -116,6 +116,10 @@ a {
   object-fit: contain;
 }
 
+.mobile-home-placeholder {
+  display: none;
+}
+
 .site-navigation {
   display: flex;
   align-items: center;
@@ -1059,16 +1063,55 @@ h1 em {
   }
 
   .site-header .brand {
+    display: flex;
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    align-items: center;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .brand-content {
     display: none;
+  }
+
+  .mobile-home-placeholder {
+    display: grid;
+    width: 3rem;
+    height: 3rem;
+    place-items: center;
+    border: 1px solid rgb(158 118 46 / 28%);
+    border-radius: 50%;
+    color: var(--ink);
+    background: rgb(215 173 98 / 18%);
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+
+  .mobile-home-placeholder svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .site-header .brand:active .mobile-home-placeholder {
+    transform: scale(0.94);
   }
 
   .site-navigation {
     display: flex;
-    width: 100%;
+    width: auto;
+    min-width: 0;
+    flex: 1 1 auto;
     align-items: stretch;
     justify-content: space-between;
     gap: 0.5rem;
     padding: 0;
+  }
+
+  .site-header {
+    justify-content: space-between;
+    gap: 0.4rem;
   }
 
   .site-navigation a[href="#contact"] {
@@ -1239,6 +1282,23 @@ h1 em {
   .site-footer p {
     grid-column: 1 / -1;
     grid-row: 2;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header,
+  .site-header.is-floating {
+    gap: 0.25rem;
+  }
+
+  .site-navigation {
+    gap: 0.25rem;
+  }
+
+  .site-navigation a {
+    padding-inline: 0.1rem;
+    font-size: 0.75rem;
+    letter-spacing: -0.03em;
   }
 }
 
